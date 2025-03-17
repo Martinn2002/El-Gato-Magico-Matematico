@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #0a0816; color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex flex-column justify-content-evenly">
+                <h1 style="font-family: 'Cinzel Decorative', serif;">El Gato Magico Matematico</h1>
+                <h4 style="font-family: 'IM Fell English', serif;">Oh, viajero del cálculo arcano, entrega a este felino sabio un número y contempla la transmutación mística. Con un conjuro ancestral, le añadiré ocho y desvelaré el residuo sagrado de su división por nueve. Pero cuidado… una vez lanzado el hechizo, desapareceré en las sombras del éter. ¡Aprieta el botón y observa la magia manifestarse!</h4>
+                <div class="d-flex justify-content-center">
+                    <button style="width: 30%;" onclick="calcularResto()" class="btn btn-primary">MAGIA</button>
+                </div>
+                
+            </div>
+            <div class="col-md-6"> 
+                <img src="assets/img/3ba79c66a9329f698800ed23a48e9564.jpg" alt="">
+            </div>
+        </div>
+                
+       
+    </div>
+    <script>
+        function calcularResto(){
+            let numeroUsuario = parseInt(prompt('Ingresa un numero y lo transformare '))
+
+            while(isNaN(numeroUsuario)){
+                numeroUsuario = parseInt(prompt('Eso no es un numero 😡, Intenta de nuevo 🧙‍♂️'))
+            }
+                document.write('<body style="background-color: #0a0816; color: white; font-size: 100px; text-align: center; margin: 20%;">' + ((numeroUsuario + 8) % 9) +'</body>');
+        }
+
+    </script>
+</body>
+</html>
