@@ -28,13 +28,27 @@
        
     </div>
     <script>
+
         function calcularResto(){
-            let numeroUsuario = parseInt(prompt('Ingresa un numero y lo transformare '))
+            let numeroUsuario = prompt('Ingresa un numero y lo transformare ')
+
+            if(numeroUsuario === null){
+                document.write('<body style="background-color: #0a0816; color: white; font-size: 100px; text-align: center; margin: 20%;">' + 'Cancelaste la magia bro ._.' +'</body>');
+                return
+            }
+
+            numeroUsuario = parseInt(numeroUsuario) // Cuando se cancela el pop up envia un null, pero si el prompt ya tiene el parseInt siempre envia un NaN y no me servia, asi que tuve que convertirlo en Int aparte fuera del prompt para diferenciar el error y el cancelar
 
             while(isNaN(numeroUsuario)){
-                numeroUsuario = parseInt(prompt('Eso no es un numero 😡, Intenta de nuevo 🧙‍♂️'))
-            }
-                document.write('<body style="background-color: #0a0816; color: white; font-size: 100px; text-align: center; margin: 20%;">' + ((numeroUsuario + 8) % 9) +'</body>');
+                numeroUsuario = prompt('Eso no es un numero 😡, Intenta de nuevo 🧙‍♂️')
+                if(numeroUsuario === null){
+                    document.write('<body style="background-color: #0a0816; color: white; font-size: 100px; text-align: center; margin: 20%;">' + 'Cancelaste la magia bro ._.' +'</body>');
+                    return
+                }else{
+                    numeroUsuario = parseInt(numeroUsuario) // acá tambien el comentario de arriba
+                }
+            }      
+            document.write('<body style="background-color: #0a0816; color: white; font-size: 100px; text-align: center; margin: 20%;">' + ((numeroUsuario + 8) % 9) +'</body>'); 
         }
 
     </script>
